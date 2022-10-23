@@ -14,7 +14,11 @@ const App: FC = () => {
       <Button type="dashed">Dashed</Button>
       <Button type="link">Link</Button>
 
-      <DatePicker />
+      <DatePicker
+        styles={
+          {width: 600, margin: '120px auto'}
+        }
+      />
 
     </div>
   )

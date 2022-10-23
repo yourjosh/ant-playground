@@ -1,8 +1,13 @@
 import {DatePicker as AntDatePicker, message} from "antd";
 import React, {FC, useState} from "react";
 
+export type DatePickerProps = {
+  styles: any
+}
 
-const DatePicker: FC = () => {
+const DatePicker: FC<DatePickerProps> = ({
+  styles,
+}) => {
 
   const [date, setDate] = useState(null);
   // value is implicity any - not strict
@@ -13,7 +18,7 @@ const DatePicker: FC = () => {
   };
 
   return (
-    <div style={{width: 400, margin: '100px auto'}}>
+    <div style={styles && styles}>
       <AntDatePicker onChange={handleChange}/>
       <div style={{marginTop: 16}}>
         {/* @ts-ignore Property 'format' does not exist on type 'never' */}
